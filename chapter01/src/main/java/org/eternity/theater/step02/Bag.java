@@ -6,25 +6,20 @@ public class Bag {
     private Invitation invitation; // 초대장
     private Ticket ticket; // 티켓
 
-    // 현금만 있을 경우
-    public Bag(long amount) {
-        this(null, amount);
-    }
-
-    // 현금과 초대장을 함께 갖고 있는 경우
-    public Bag(Invitation invitation, long amount) {
-        this.invitation = invitation;
-        this.amount = amount;
+    public Long hold(Ticket ticket) {
+        if (hasInvitation()) {
+            setTicket(ticket);
+            return 0L;
+        } else {
+            setTicket(ticket);
+            minusAmount(ticket.getFee());
+            return ticket.getFee();
+        }
     }
 
     // 초대장 확인
     public boolean hasInvitation() {
         return invitation != null;
-    }
-
-    // 티켓 확인
-    public boolean hasTicket() {
-        return ticket != null;
     }
 
     // 가방에 티켓 저장
@@ -35,11 +30,6 @@ public class Bag {
     // 현금 차감
     public void minusAmount(Long amount) {
         this.amount -= amount;
-    }
-
-    // 현금 증가
-    public void plusAmount(Long amount) {
-        this.amount += amount;
     }
 }
 
