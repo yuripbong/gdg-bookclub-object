@@ -8,8 +8,15 @@ public class Audience {
         this.bag = bag;
     }
 
-    // 관객의 가방 조회
-    public Bag getBag() {
-        return bag;
+    // 티켓 구매
+    public Long buy(Ticket ticket) {
+        if (bag.hasInvitation()) { // 초대장이 있는 경우
+            bag.setTicket(ticket);
+            return 0L;
+        } else { // 초대장이 없는 경우 티켓 구매
+            bag.setTicket(ticket);
+            bag.minusAmount(ticket.getFee());
+            return ticket.getFee();
+        }
     }
 }
