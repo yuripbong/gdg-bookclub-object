@@ -1,4 +1,7 @@
-package org.eternity.movie.step01;
+package org.eternity.movie.step01.pricing;
+
+import org.eternity.movie.step01.DiscountCondition;
+import org.eternity.movie.step01.Screening;
 
 public class SequenceCondition implements DiscountCondition {
     private int sequence; // 순번
