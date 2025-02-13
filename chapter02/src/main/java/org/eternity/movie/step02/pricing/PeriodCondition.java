@@ -1,7 +1,7 @@
 package org.eternity.movie.step02.pricing;
 
-import org.eternity.movie.step01.DiscountCondition;
-import org.eternity.movie.step01.Screening;
+import org.eternity.movie.step02.DiscountCondition;
+import org.eternity.movie.step02.Screening;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;

@@ -1,5 +1,7 @@
 package org.eternity.movie.step02;
 
+import org.eternity.money.Money;
+
 public class Reservation {
     private Customer customer; // 고객
     private Screening screening; // 상영 정보

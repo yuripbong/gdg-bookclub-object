@@ -1,4 +1,4 @@
-package org.eternity.movie.step01;
+package org.eternity.money;
 
 import java.math.BigDecimal;
 

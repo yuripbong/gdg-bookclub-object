@@ -1,11 +1,12 @@
 package org.eternity.movie.step02.pricing;
 
-import org.eternity.movie.step01.DiscountCondition;
-import org.eternity.movie.step01.DiscountPolicy;
-import org.eternity.movie.step01.Money;
-import org.eternity.movie.step01.Screening;
+import org.eternity.money.Money;
+import org.eternity.movie.step02.DefaultDiscountPolicy;
+import org.eternity.movie.step02.DiscountCondition;
+import org.eternity.movie.step02.DiscountPolicy;
+import org.eternity.movie.step02.Screening;
 
-public class PercentDiscountPolicy extends DiscountPolicy {
+public class PercentDiscountPolicy extends DefaultDiscountPolicy {
     private double percent;
 
     public PercentDiscountPolicy(double percent, DiscountCondition... conditions) {

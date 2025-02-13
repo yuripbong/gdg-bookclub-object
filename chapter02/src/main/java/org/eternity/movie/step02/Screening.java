@@ -1,5 +1,5 @@
 package org.eternity.movie.step02;
-
+import org.eternity.money.Money;
 import java.time.LocalDateTime;
 
 public class Screening {
@@ -26,5 +26,13 @@ public class Screening {
     // 기본 요금
     public Money getMovieFee() {
         return movie.getFee();
+    }
+
+    public Reservation reserve(Customer customer, int audienceCount) {
+        return new Reservation(customer, this, calculateFee(audienceCount), audienceCount);
+    }
+
+    private Money calculateFee(int audienceCount) {
+        return movie.calculateMovieFee(this).times(audienceCount);
     }
 }
